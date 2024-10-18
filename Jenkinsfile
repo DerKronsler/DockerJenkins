@@ -4,8 +4,8 @@ agent { label 'webapp' }
         stage("Dependencies"){
         steps{
             sh '''
-            apt install python3
-            apt install py3-pip
+            apk add python3
+            apk add py3-pip
             pip install -r requirements.txt
             '''
 
