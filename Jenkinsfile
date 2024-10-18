@@ -4,7 +4,6 @@ agent { label 'webapp' }
         stage("Dependencies"){
         steps{
             sh '''
-            USER root
             apk add python3
             apk add py3-pip
             pip install flask
