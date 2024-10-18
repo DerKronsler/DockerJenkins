@@ -6,6 +6,8 @@ agent { label 'webapp' }
             sh '''
             apk add python3
             apk add py3-pip
+            python3 -m venv .venv
+            source .venv/bin/activate
             pip install flask
             '''
 
