@@ -1,5 +1,5 @@
 pipeline{
-agent { label 'webapp' }
+agent { label 'master' }
     triggers{
         pollSCM '* * * * *' 
     } 
