@@ -28,7 +28,7 @@ agent { label 'webapp' }
                 sh '''
                 mv web/index.py final
                 cd ..
-                cd final
+                cd /final
                 git add index.py
                 git commit -m 'Add testfile from Jenkins Pipeline'
                 '''
