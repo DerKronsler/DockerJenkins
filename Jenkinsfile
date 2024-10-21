@@ -4,6 +4,18 @@ agent { label 'webapp' }
         pollSCM '* * * * *' 
     } 
     stages{
+        stage("clone"){
+            steps{
+                dir("neptune"){
+                    git(
+                        url: "https://github.com/DerKronsler/DockerJenkins.git",
+                        branch: "main",
+                        changelog: true,
+                        poll: true
+                    )
+                }
+            }
+        }
         stage("Dependencies"){
         steps{
             sh '''
