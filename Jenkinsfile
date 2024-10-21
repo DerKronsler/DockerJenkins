@@ -1,5 +1,8 @@
 pipeline{
 agent { label 'webapp' }
+    triggers{
+        pollSCM '* * * * *' 
+    } 
     stages{
         stage("Dependencies"){
         steps{
