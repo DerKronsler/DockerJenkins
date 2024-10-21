@@ -39,7 +39,7 @@ agent { label 'webapp' }
         stage("Push"){
             steps{
                 withCredentials([gitUsernamePassword(credentialsId: 'derkronsler-githubtoken', gitToolName: 'Default')]) {
-                sh "git push -u origin main" 
+                sh "git push -u remotes/origin main" 
                 }
             }
         }
