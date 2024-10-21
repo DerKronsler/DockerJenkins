@@ -1,5 +1,5 @@
 pipeline{
-agent { label 'master' }
+agent { label 'webapp' }
     triggers{
         pollSCM '* * * * *' 
     } 
@@ -7,9 +7,9 @@ agent { label 'master' }
         stage("Dependencies"){
         steps{
             sh '''
-            apt install python3
-            apt install py3-pip
-            apt install py3-flask
+            apk add python3
+            apk add py3-pip
+            apk add py3-flask
             '''
 
              }
@@ -19,7 +19,7 @@ agent { label 'master' }
             steps{
                 sh '''
                 cd web
-                python3 index.py
+                python3 index.py &
                 '''
             }
         }
