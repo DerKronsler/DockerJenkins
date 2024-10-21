@@ -7,9 +7,9 @@ agent { label 'master' }
         stage("Dependencies"){
         steps{
             sh '''
-            apk add python3
-            apk add py3-pip
-            apk add py3-flask
+            apt install python3
+            apt install py3-pip
+            apt install py3-flask
             '''
 
              }
