@@ -19,10 +19,27 @@ agent { label 'webapp' }
             steps{
                 sh '''
                 cd web
-                python index.py 
+                python index.py &
                 '''
             }
         }
-
+        stage("Git Add"){
+            steps{
+                sh '''
+                mv web/index.py final
+                cd ..
+                cd final
+                git add index.py
+                git commit -m 'Add testfile from Jenkins Pipeline'
+                '''
+                
+            }
+        }
+        staeg("Push"){
+            steps{
+                withCredentials([gitUsernamePassword(credentialsId: 'derkronsler-githubtoken', gitToolName: 'Default')]) {
+                sh "git push -u origin main"
+            }
+        }
     }
 }
