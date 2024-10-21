@@ -27,7 +27,6 @@ agent { label 'webapp' }
             steps{
                 sh '''
                 mv web/index.py final
-                cd ..
                 ls
                 cd final
                 git add index.py
