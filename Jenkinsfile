@@ -18,11 +18,11 @@ agent { label 'webapp' }
         stage("Testen"){
             steps{
                 sh '''
-                python RPGGame.py
-                test
+                cd web
+                python index.py &
                 '''
             }
         }
-    
+
     }
 }
