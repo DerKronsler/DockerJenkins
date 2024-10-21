@@ -19,7 +19,7 @@ agent { label 'webapp' }
             steps{
                 sh '''
                 cd web
-                python3 index.py & 
+                python3 index.py
                 '''
             }
         }
