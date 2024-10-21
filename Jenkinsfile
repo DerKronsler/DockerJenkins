@@ -31,6 +31,7 @@ agent { label 'webapp' }
                 cd final
                 git add index.py
                 git commit -m 'Add testfile from Jenkins Pipeline'
+                git branch -b
                 '''
                 
             }
