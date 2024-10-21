@@ -35,10 +35,11 @@ agent { label 'webapp' }
                 
             }
         }
-        staeg("Push"){
+        stage("Push"){
             steps{
                 withCredentials([gitUsernamePassword(credentialsId: 'derkronsler-githubtoken', gitToolName: 'Default')]) {
-                sh "git push -u origin main"
+                sh "git push -u origin main" 
+                }
             }
         }
     }
