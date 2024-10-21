@@ -4,18 +4,6 @@ agent { label 'webapp' }
         pollSCM '* * * * *' 
     } 
     stages{
-        stage("clone"){
-            steps{
-                dir("neptune"){
-                    git(
-                        url: "https://github.com/DerKronsler/DockerJenkins.git",
-                        branch: "main",
-                        changelog: true,
-                        poll: true
-                    )
-                }
-            }
-        }
         stage("Dependencies"){
         steps{
             sh '''
@@ -31,7 +19,7 @@ agent { label 'webapp' }
             steps{
                 sh '''
                 cd web
-                python index.py &
+                python index.py 
                 '''
             }
         }
