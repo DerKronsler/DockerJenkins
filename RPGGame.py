@@ -38,7 +38,7 @@ class Charakter:
     def erfahrungSammeln(self, erfahrung):
         self.erfahrung += erfahrung
         print(f"{self.name} hat {erfahrung} Erfahrungspunkte gesammelt!")
-        if self.erfahrung >= self.level * 11:
+        if self.erfahrung >= self.level * 10:
             self.levelAufstieg()
             self.erfahrung = 0
 
