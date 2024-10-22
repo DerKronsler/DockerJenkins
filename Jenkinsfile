@@ -11,7 +11,7 @@ agent { label 'webapp' }
             apk add py3-pip
             apk add py3-flask
             apk add py3-mock
-            pip install Python-IO
+            apk add py3-Python-IO
             '''
 
              }
