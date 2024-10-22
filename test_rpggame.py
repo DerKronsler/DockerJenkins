@@ -43,7 +43,7 @@ class TestKampf(unittest.TestCase):
         self.spieler = Charakter("Held", 30, 8, 5)
         self.gegner = Gegner("Zombie", 20, 6, 3)
 
-    @patch('builtins.input', side_effect=['1', '1'])
+    @patch('builtins.input', side_effect=['1', '1','1', '1'])
     def test_kampf_sieg(self, mock_input):
         result = kampf(self.spieler, self.gegner)
         self.assertTrue(result)
