@@ -10,6 +10,8 @@ agent { label 'webapp' }
             apk add python3
             apk add py3-pip
             apk add py3-flask
+            apk add py3-mock
+            apk add py3-io
             '''
 
              }
@@ -18,8 +20,7 @@ agent { label 'webapp' }
         stage("Testen"){
             steps{
                 sh '''
-                cd web
-                python index.py &
+                python -m unittest test_rpggame.py
                 '''
             }
         }
