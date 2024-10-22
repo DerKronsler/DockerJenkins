@@ -1,4 +1,5 @@
 import unittest
+import RPGGame
 from unittest.mock import patch
 import random
 
