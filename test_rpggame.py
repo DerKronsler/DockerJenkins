@@ -1,5 +1,5 @@
 import unittest
-from RPGGame import Charakter, Gegner
+from RPGGame import Charakter, Gegner, kampf
 from unittest.mock import patch
 from io import StringIO
 import random
