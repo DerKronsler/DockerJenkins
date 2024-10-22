@@ -26,10 +26,10 @@ agent { label 'webapp' }
         stage("Git Add"){
             steps{
                 sh '''
-                mv web/index.py final
+                mv RPGGame.py final
                 ls
                 cd final
-                git add index.py
+                git add RPGGame.py
                 git commit -m 'Add testfile from Jenkins Pipeline'
                 git branch -a
                 '''
